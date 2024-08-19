@@ -5,6 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Basic Calculator</title>
+   <script src="https://kit.fontawesome.com/b3126ed53b.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,78 +14,41 @@
       <div class="calculator">
          <div class="display">
             <div class="screen">
-               <div class="input">
-                  77
-                  <span class="operator">+</span>
-                  33
-               </div>
-               <div class="output">123</div>
+               <div class="input"></div>
+               <div class="output">0</div>
             </div>
          </div>
 
          <div class="keys">
-            <div data-key="clear" class="key action">
-               <span>AC</span>
-            </div>
-            <div data-key="bracket" class="key action">
-               <span>( )</span>
-            </div>
-            <div data-key="%" class="key action">
-               <span>%</span>
-            </div>
-            <div data-key="/" class="key action">
-               <span>÷</span>
-            </div>
-            <div data-key="7" class="key action">
-               <span>7</span>
-            </div>
-            <div data-key="8" class="key action">
-               <span>8</span>
-            </div>
-            <div data-key="9" class="key action">
-               <span>9</span>
-            </div>
-            <div data-key="*" class="key action">
-               <span>x</span>
-            </div>
-            <div data-key="4" class="key action">
-               <span>4</span>
-            </div>
-            <div data-key="5" class="key action">
-               <span>5</span>
-            </div>
-            <div data-key="6" class="key action">
-               <span>6</span>
-            </div>
-            <div data-key="-" class="key action">
-               <span>-</span>
-            </div>
-            <div data-key="1" class="key action">
-               <span>1</span>
-            </div>
-            <div data-key="2" class="key action">
-               <span>2</span>
-            </div>
-            <div data-key="3" class="key action">
-               <span>3</span>
-            </div>
-            <div data-key="+" class="key action">
-               <span>+</span>
-            </div>
-            <div data-key="backspace" class="key action">
-               <span>C</span>
-            </div>
-            <div data-key="0" class="key action">
-               <span>0</span>
-            </div>
-            <div data-key="." class="key action">
-               <span>.</span>
-            </div>
-            <div data-key="=" class="key action">
-               <span>=</span>
-            </div>
+            <button type="button" class="key clear">AC</button>
+            <button type="button" class="key backspace">C</button>
+            <button type="button" data-num="/" class="key">÷</button>
+            <button type="button" data-num="*" class="key">x</button>
+            <button type="button" data-num="7" class="key">7</button>
+            <button type="button" data-num="8" class="key">8</button>
+            <button type="button" data-num="9" class="key">9</button>
+            <button type="button" data-num="-" class="key">-</button>
+            <button type="button" data-num="4" class="key">4</button>
+            <button type="button" data-num="5" class="key">5</button>
+            <button type="button" data-num="6" class="key">6</button>
+            <button type="button" data-num="+" class="key">+</button>
+            <button type="button" data-num="1" class="key">1</button>
+            <button type="button" data-num="2" class="key">2</button>
+            <button type="button" data-num="3" class="key">3</button>
+            <button type="button" class="key btn-equal">=</button>
+            <button type="button" data-num="0" class="key">0</button>
+            <button type="button" data-num="." class="key">.</button>
+            <button type="button" class="key history-btn"><i class="fa fa-history" aria-hidden="true"></i></button>
          </div>
       </div>
+
+      <div class="history-sidebar">
+         <div class="history-title">
+            <h2>History</h2>
+         </div>
+         <ul class="history-list"></ul>
+      </div>
+
       <script src="script.js"></script>
 </body>
 

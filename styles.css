@@ -3,11 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #ffd299;
+}
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 .calculator {
   background-color: black;
@@ -39,4 +43,119 @@
   width: 100%;
   max-width: 100%;
   overflow: auto;
+}
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0.5rem;
+  padding: 1.5rem;
+}
+.key {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+button {
+  background-color: #444;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.key:hover {
+  background-color: #555;
+}
+.key[data-num="+"],
+.key[data-num="-"],
+.key[data-num="*"],
+.key[data-num="/"] {
+  background-color: #444;
+}
+
+.key[data-num="+"]:hover,
+.key[data-num="-"]:hover,
+.key[data-num="*"]:hover,
+.key[data-num="/"]:hover {
+  background-color: #666;
+}
+.key:last-child {
+  background-color: red;
+  color: white;
+}
+.key:last-child:hover {
+  background-color: #ff4d4d;
+  transition: background-color 0.3s ease;
+}
+.key:nth-last-child(4) {
+  background-color: yellow;
+  color: black;
+  grid-row: span 2;
+  font-size: 2rem;
+}
+.key:nth-last-child(4):hover {
+  background-color: gold;
+  transition: background-color 0.3s ease;
+}
+.history-sidebar {
+  position: absolute;
+  top: 5;
+  right: 530px;
+  width: 300px;
+  min-height: 579px;
+  max-height: 579px;
+  overflow-y: auto;
+  border-radius: 2rem;
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.5s ease;
+  z-index: 2;
+}
+.history-sidebar h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.history-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.history-sidebar li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+}
+.calculator {
+  position: relative;
+  z-index: 3;
+}
+.history-active .history-sidebar {
+  right: 205px;
+}
+.history-active .calculator {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.history-sidebar::-webkit-scrollbar {
+  display: none;
+}
+.history-title {
+  position: sticky;
+  top: -3%;
+  background-color: red;
+  width: 106%;
+  padding: 3px;
+  color: white;
+  z-index: 1;
 }
